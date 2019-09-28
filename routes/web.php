@@ -12,9 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Route::get('foo', function () {
     return "Hello World!";
+});
+
+/*Route::get('landing', function(){
+    return view('landing');
+});*/
+
+Route::get('feed', function(){
+    return view('feed');
+});
+
+Route::get('post', function(){
+    return view('post');
 });
