@@ -7,14 +7,14 @@
     <div class="post-wrapper">
 
         <div class="post-img">
-            <img src="{{asset('images/featured_placeholder_3.png')}}" alt="post placeholder">
+            <img src="{{secure_asset('images/post_placeholder.png')}}" alt="post placeholder">
         </div>
 
         <div class="post-content">
 
             <div class="post-info">
                 <div class="post-artist">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <p>username</p>
                 </div>
                 <div class="post-actions">
@@ -29,7 +29,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -39,7 +39,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -49,13 +49,44 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam aliquam explicabo reprehenderit fugit! Ipsam dolore tenetur omnis labore atque eos deserunt itaque reiciendis cupiditate qui. Quia numquam voluptatibus culpa neque.
                     </p>
                 </div>
+
+                <div class="post-comment">
+                    <div class="comment-author">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <p>username</p>
+                    </div>
+                    <p class="comment-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam aliquam explicabo reprehenderit fugit! Ipsam dolore tenetur omnis labore atque eos deserunt itaque reiciendis cupiditate qui. Quia numquam voluptatibus culpa neque.
+                    </p>
+                </div>
+
+                <div class="post-comment">
+                    <div class="comment-author">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <p>username</p>
+                    </div>
+                    <p class="comment-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam aliquam explicabo reprehenderit fugit! Ipsam dolore tenetur omnis labore atque eos deserunt itaque reiciendis cupiditate qui. Quia numquam voluptatibus culpa neque.
+                    </p>
+                </div>
+
+                <div class="post-comment">
+                    <div class="comment-author">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <p>username</p>
+                    </div>
+                    <p class="comment-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam aliquam explicabo reprehenderit fugit! Ipsam dolore tenetur omnis labore atque eos deserunt itaque reiciendis cupiditate qui. Quia numquam voluptatibus culpa neque.
+                    </p>
+                </div>
+
 
             </div>
 

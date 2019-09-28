@@ -107,6 +107,26 @@ body {
     background-color: var(--white-color);
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--gray-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--purple-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-color);
+}
+
 /*////////////////////////////////////////////*/
 /*////////////// I N D E X ///////////////////*/
 /*////////////////////////////////////////////*/
@@ -499,26 +519,31 @@ body {
 /*++++++++++++++++++++++++++++++++++++++++++++*/
 
 .post-wrapper {
+    margin-top: 10vh;
     width: 100%;
-    height: 95vh;
+    /*height: 85vh;*/
     display: flex;
 }
 
 .post-img {
     width: 50%;
+    height: 85vh;
     /*height: 100vh;*/
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
     background-color: var(--black-color);
 }
 .post-img img {
     width: 100%;
+    /*border: 1px solid var(--pink-color);*/
 }
 
 .post-content {
-    margin-top: 10vh;
+    right: 0;
     width: 50%;
+    height: 85vh;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -534,9 +559,10 @@ body {
 
 .post-comments {
     width: 100%;
+    height: 70vh;
     display: flex;
-    flex-flow: column nowrap;
-    overflow: scroll;
+    flex-flow: row wrap;
+    overflow-y: scroll;
 }
 .post-comment {
     width: 100%;
