@@ -69,7 +69,7 @@
                 <div class="feed-post-info">
                     <div class="post-artist">
                         <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
-                        a>username</a>
+                        <a href="{{url('/account')}}">username</a>
                     </div>
                     <div class="post-actions">
                         <i class="fas fa-heart"></i>
