@@ -5,11 +5,22 @@
     <a href="{{url('/')}}">MUSEUM</a>
     </div>
     <div class="navbar-menu" id="navbar-menu-id">
-        <a class="menu-link" href="{{url('/feed')}}">FEED</a>
-        <a class="menu-link" href="#explore">EXPLORE</a>
-        <a class="menu-link menu-post" href="{{url('/post')}}">SHARE</a>
-        <a class="menu-link" href="#account">CUENTA</a>
-        <!--<a id="nav-contact" onclick="openContact()">CONTACTO</a>-->
+        <a class="menu-link" href="{{url('/feed')}}">
+            <i class="fas fa-home"></i>
+            FEED
+        </a>
+        <a class="menu-link" href="{{url('/explore')}}">
+            <i class="fas fa-search"></i>
+            EXPLORE
+        </a>
+        <a class="menu-link menu-post" href="{{url('/post')}}">
+            <i class="fas fa-plus-square"></i>
+            SHARE
+        </a>
+        <a class="menu-link menu-account" href="{{url('/account')}}">
+            ACCOUNT
+            <img src="{{asset('images/user_placeholder.png')}}" alt="current user">
+        </a>
     </div>
 
 </nav>

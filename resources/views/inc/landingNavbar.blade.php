@@ -5,7 +5,7 @@
         <a href="{{url('/')}}">MUSEUM</a>
     </div>
     <div class="navbar-menu landing-menu" id="navbar-menu-id">
-        <a class="landing-menu-link" href="{{ url('/feed') }}">EXPLORE</a>
+        <a class="landing-menu-link" href="{{ url('/explore') }}">EXPLORE</a>
         <a class="landing-menu-link" href="#signin">SIGN IN</a>
         <a class="landing-menu-link landing-signup" href="#signup">SIGN UP</a>
     </div>

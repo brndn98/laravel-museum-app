@@ -6,7 +6,7 @@
 
     <div class="landing-wrapper">
 
-        <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">
+        <div class="featured" style="background-image: url({{asset('images/featured_placeholder_3.png')}})">
 
             <div class="landing-header">
                 <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
@@ -15,7 +15,7 @@
 
             <!--Featured illustration-->
             <div class="featured-artist">
-                <img src="{{secure_asset('images/user_placeholder.png')}}" alt="featured user">
+                <img src="{{asset('images/user_placeholder.png')}}" alt="featured user">
                 <p>featuredUser</p>
             </div>
 

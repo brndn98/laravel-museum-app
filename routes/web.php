@@ -27,6 +27,14 @@ Route::get('feed', function(){
     return view('feed');
 });
 
+Route::get('explore', function(){
+    return view('explore');
+});
+
 Route::get('post', function(){
     return view('post');
+});
+
+Route::get('account', function(){
+    return view('account');
 });
