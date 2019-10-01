@@ -23,6 +23,10 @@ Route::get('foo', function () {
     return view('landing');
 });*/
 
+Route::get('signup', function(){
+    return view('signup');
+});
+
 Route::get('feed', function(){
     return view('feed');
 });
@@ -33,6 +37,10 @@ Route::get('explore', function(){
 
 Route::get('post', function(){
     return view('post');
+});
+
+Route::get('share', function(){
+    return view('share');
 });
 
 Route::get('account', function(){

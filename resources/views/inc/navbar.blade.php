@@ -13,7 +13,7 @@
             <i class="fas fa-search"></i>
             EXPLORE
         </a>
-        <a class="menu-link menu-post" href="{{url('/post')}}">
+        <a class="menu-link menu-post" href="{{url('/share')}}">
             <i class="fas fa-plus-square"></i>
             SHARE
         </a>

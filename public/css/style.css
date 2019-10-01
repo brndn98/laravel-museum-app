@@ -832,6 +832,225 @@ body {
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++ S H A R E +++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++*/
+
+.share-wrapper {
+    margin-top: 10vh;
+    width: 40%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.share-wrapper > form {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--gray-color);
+}
+
+.share-wrapper > form > h1 {
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    color: var(--pink-color);
+    margin: 20px 0;
+}
+
+.file-field {
+    width: 80%;
+    height: 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.file-input {
+    width: 0.1px;
+    font-family: var(--font-text);
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--black-color);
+    z-index: 1;
+    opacity: 0;
+}
+.file-field > label {
+    position: absolute;
+    /*left: 0;*/
+    z-index: 2;
+    font-family: var(--font-title);
+    font-size: 0.8em;
+    color: var(--white-color);
+    background-color: var(--purple-color);
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.file-field > label:hover,
+.file-input:focus + .file-label {
+    background-color: var(--pink-color);
+}
+
+.form-field {
+    width: 80%;
+    /*height: 10%;*/
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-field > * {
+    width: 80%;
+    outline: none;
+}
+.form-field > p {
+    font-family: var(--font-text);
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--purple-color);
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+.field-input {
+    /*width: 100%;*/
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    color: var(--purple-color);
+    background-color: var(--white-color);
+    font-family: var(--font-text);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0 20px;
+    transition: 0.5s;
+}
+.field-input:focus,
+.form-field > textarea:focus {
+    border-radius: 2px;
+    color: var(--pink-color);
+}
+.field-input:focus + p,
+.form-field > textarea:focus + p {
+    color: var(--pink-color);
+}
+
+.form-field > textarea {
+    /*width: 100%;*/
+    min-height: 10vh;
+    border: none;
+    border-radius: 25px;
+    color: var(--purple-color);
+    font-family: var(--font-text);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.form-field > fieldset {
+    /*margin-top: 5vh;*/
+    width: 90%;
+    /*display: grid;
+    grid-template-columns: repeat(4, 1fr);*/
+    display: flex;
+    flex-flow: row wrap;
+}
+.form-checkbox {
+    width: 22%;
+    height: 4vh;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    /*cursor: pointer;*/
+}
+.form-checkbox:hover > label,
+.form-checkbox:hover > i {
+    color: var(--pink-color);
+}
+.form-checkbox > * {
+    position: absolute;
+    left: 0;
+}
+.form-checkbox > label {
+    left: unset;
+    right: 0;
+    font-family: var(--font-text);
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--purple-color);
+    transition: 0.2s;
+}
+.form-checkbox > i {
+    font-size: 1.2em;
+    color: var(--purple-color);
+    transition: 0.2s;
+}
+.checkbox-checked {
+    opacity: 0;
+}
+.checkbox-input {
+    width: 0.1px;
+    height: 0.1px;
+}
+.checkbox-input:checked + .checkbox-checked {
+    opacity: 1;
+}
+
+.form-submit {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-family: var(--font-title);
+    font-size: 1em;
+    color: var(--white-color);
+    background-color: var(--pink-color);
+    border-radius: 25px;
+    margin: 20px 0;
+    transition: 0.2s;
+}
+.form-submit:hover,
+.form-submit:focus {
+    color: var(--yellow-color);
+    background-color: var(--purple-color);
+    border-radius: 5px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++ S I G N U P +++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++*/
+
+.signup-wrapper {
+    margin-top: 10vh;
+    width: 40%;
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-wrapper > form {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--gray-color);
+}
+
+.signup-wrapper > form > h1 {
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    color: var(--pink-color);
+    margin: 20px 0;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++*/
 /*++++++++++++++ F O O T E R +++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++++++++*/
 

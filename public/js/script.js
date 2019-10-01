@@ -59,3 +59,34 @@ menuLinks.forEach(element => {
 
 });
 */
+
+/*
+var fileInputs = document.querySelectorAll(".file-input");
+Array.prototype.forEach.call(fileInputs, function(input) {
+    var label = input.nextElementSibling;
+    var labelVal = label.innerHTML;
+
+    input.addEventListener("change", function(e) {
+        var fileName = "";
+        if (this.files && this.files.length > 1) {
+            fileName = (
+                this.getAttribute("data-multiple-caption") || ""
+            ).replace("{count}", this.files.length);
+        } else {
+            fileName = e.target.value.split("\\").pop();
+        }
+
+        if (fileName) label.innerHTML = fileName;
+        else label.innerHTML = labelVal;
+    });
+});
+*/
+var fileInputs = document.querySelectorAll(".file-input");
+fileInputs.forEach((fileInput, inputIndex) => {
+    var fileLabel = fileInput.nextElementSibling;
+
+    fileInput.addEventListener("change", function() {
+        var fileName = fileInput.value.split("\\").pop();
+        fileLabel.innerHTML = fileName;
+    });
+});
