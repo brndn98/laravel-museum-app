@@ -14,85 +14,85 @@
         <div class="explore-posts">
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/post-placeholder.png')}})">
-                    <!--<img src="{{asset('images/post-placeholder.png')}}" alt="post image">-->
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})">
+                    <!--<img src="{{secure_asset('images/post-placeholder.png')}}" alt="post image">-->
                 </div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/post_placeholder.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/post_placeholder.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder_2.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder_2.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder_3.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/post-placeholder.png')}})">
-                    <!--<img src="{{asset('images/post-placeholder.png')}}" alt="post image">-->
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})">
+                    <!--<img src="{{secure_asset('images/post-placeholder.png')}}" alt="post image">-->
                 </div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/post_placeholder.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/post_placeholder.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder_2.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder_2.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>
 
             <div class="grid-post" onclick="window.location='{{ url('/post') }}'">
-                <div class="grid-post-img" style="background-image: url({{asset('images/featured_placeholder_3.png')}})"></div>
+                <div class="grid-post-img" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})"></div>
                 <div class="grid-post-info">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
             </div>

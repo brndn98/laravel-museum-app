@@ -7,14 +7,14 @@
     <div class="post-wrapper">
 
         <div class="post-img">
-            <img src="{{asset('images/post_placeholder.png')}}" alt="post placeholder">
+            <img src="{{secure_asset('images/post_placeholder.png')}}" alt="post placeholder">
         </div>
 
         <div class="post-content">
 
             <div class="post-info">
                 <div class="post-artist">
-                    <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                     <a href="{{url('/account')}}">username</a>
                 </div>
                 <div class="post-actions">
@@ -29,7 +29,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -39,7 +39,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -49,7 +49,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -59,7 +59,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -69,7 +69,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">
@@ -79,7 +79,7 @@
 
                 <div class="post-comment">
                     <div class="comment-author">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <p>username</p>
                     </div>
                     <p class="comment-text">

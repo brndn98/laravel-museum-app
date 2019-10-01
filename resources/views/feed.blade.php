@@ -10,11 +10,11 @@
 
             <div class="feed-post">
                 <div class="feed-post-img">
-                    <img src="{{asset('images/post-placeholder.png')}}" alt="post image">
+                    <img src="{{secure_asset('images/post-placeholder.png')}}" alt="post image">
                 </div>
                 <div class="feed-post-info">
                     <div class="post-artist">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <a href="{{url('/account')}}">username</a>
                     </div>
                     <div class="post-actions">
@@ -28,11 +28,11 @@
 
             <div class="feed-post">
                 <div class="feed-post-img">
-                    <img src="{{asset('images/post_placeholder.png')}}" alt="post image">
+                    <img src="{{secure_asset('images/post_placeholder.png')}}" alt="post image">
                 </div>
                 <div class="feed-post-info">
                     <div class="post-artist">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <a href="{{url('/account')}}">username</a>
                     </div>
                     <div class="post-actions">
@@ -46,11 +46,11 @@
 
             <div class="feed-post">
                 <div class="feed-post-img">
-                    <img src="{{asset('images/featured_placeholder_3.png')}}" alt="post image">
+                    <img src="{{secure_asset('images/featured_placeholder_3.png')}}" alt="post image">
                 </div>
                 <div class="feed-post-info">
                     <div class="post-artist">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <a href="{{url('/account')}}">username</a>
                     </div>
                     <div class="post-actions">
@@ -64,11 +64,11 @@
 
             <div class="feed-post">
                 <div class="feed-post-img">
-                    <img src="{{asset('images/post-placeholder.png')}}" alt="post image">
+                    <img src="{{secure_asset('images/post-placeholder.png')}}" alt="post image">
                 </div>
                 <div class="feed-post-info">
                     <div class="post-artist">
-                        <img src="{{asset('images/user_placeholder.png')}}" alt="user avatar">
+                        <img src="{{secure_asset('images/user_placeholder.png')}}" alt="user avatar">
                         <a href="{{url('/account')}}">username</a>
                     </div>
                     <div class="post-actions">

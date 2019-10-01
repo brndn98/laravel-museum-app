@@ -19,7 +19,7 @@
         </a>
         <a class="menu-link menu-account" href="{{url('/account')}}">
             ACCOUNT
-            <img src="{{asset('images/user_placeholder.png')}}" alt="current user">
+            <img src="{{secure_asset('images/user_placeholder.png')}}" alt="current user">
         </a>
     </div>
 
