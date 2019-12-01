@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="post-artist new-post-artist">
-                    <img src="{{asset('avatar/'.$post->user->avatar)}}" alt="{{$post->user->username}}">
+                    <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                     <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                 </div>
                 <div class="post-actions new-post-actions">

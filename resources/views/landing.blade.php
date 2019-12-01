@@ -14,7 +14,7 @@
                 </div>
                 <!--Featured illustration-->
                 <div class="featured-artist">
-                    <img src="{{asset('avatar/'.$post->user->avatar)}}" alt="{{$post->user->username}}">
+                    <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                     <p>{{$post->user->username}}</p>
                 </div>
             </div>

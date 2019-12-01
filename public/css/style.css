@@ -330,8 +330,11 @@ body {
     opacity: 0.3;
     transition: opacity 0.2s;
 }
-.featured-artist > img {
-    height: 100%;
+.featured-artist > div {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     margin-right: 5%;
 }
