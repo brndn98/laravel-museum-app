@@ -82,7 +82,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        if(Auth::check()){
+            $tags = Tag::all();
+            return view('modify', compact('post', 'tags'));
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -94,7 +99,24 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->fill($request->except(['file']));
+
+        if($request->hasFile('file')){
+            $path = public_path().'/post/'.$post->file;
+            if(File::exists($path)){
+                File::delete($path);
+            }
+
+            $file = $request->file('file');
+            $filename = time().$file->getClientOriginalName();
+            $file->move(public_path().'/post/', $filename);
+            $post->file = $filename;
+        }
+
+        $post->save();
+        $post->tags()->sync($request->tags);
+
+        return redirect()->route('posts.show', [$post]);
     }
 
     /**
