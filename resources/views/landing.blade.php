@@ -6,20 +6,30 @@
 
     <div class="landing-wrapper">
 
-        <div class="featured" style="background-image: url({{asset('post/'.$post->file)}})">
-
-            <div class="landing-header">
-                <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
-                <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
+        @isset($post)
+            <div class="featured" style="background-image: url({{asset('post/'.$post->file)}})">
+                <div class="landing-header">
+                    <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
+                    <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
+                </div>
+                <!--Featured illustration-->
+                <div class="featured-artist">
+                    <img src="{{asset('avatar/'.$post->user->avatar)}}" alt="{{$post->user->username}}">
+                    <p>{{$post->user->username}}</p>
+                </div>
             </div>
-
-            <!--Featured illustration-->
-            <div class="featured-artist">
-                <img src="{{asset('avatar/'.$post->user->avatar)}}" alt="{{$post->user->username}}">
-                <p>{{$post->user->username}}</p>
+        @else
+            <div class="featured" style="background-image: url({{asset('images/featured_placeholder_3.png')}})">
+                <div class="landing-header">
+                    <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
+                    <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
+                </div>
+                <div class="featured-artist">
+                    <img src="{{asset('images/user_placeholder')}}" alt="featuredartist">
+                    <p>featuredartist</p>
+                </div>
             </div>
-
-        </div>
+        @endisset
 
         <div class="landing-login">
 
