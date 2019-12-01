@@ -25,7 +25,7 @@
                     <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
                 </div>
                 <div class="featured-artist">
-                    <img src="{{asset('images/user_placeholder')}}" alt="featuredartist">
+                    <img src="{{asset('images/user_placeholder.png')}}" alt="featuredartist">
                     <p>featuredartist</p>
                 </div>
             </div>
