@@ -6,7 +6,7 @@
 
     <div class="landing-wrapper">
 
-        <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">
+        <div class="featured" style="background-image: url({{asset('post/'.$post->file)}})">
 
             <div class="landing-header">
                 <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
@@ -15,8 +15,8 @@
 
             <!--Featured illustration-->
             <div class="featured-artist">
-                <img src="{{secure_asset('images/user_placeholder.png')}}" alt="featured user">
-                <p>featuredUser</p>
+                <img src="{{asset('avatar/'.$post->user->avatar)}}" alt="{{$post->user->username}}">
+                <p>{{$post->user->username}}</p>
             </div>
 
         </div>
@@ -25,8 +25,11 @@
 
             <p class="landing-login-logo">MUSEUM</p>
 
-            <form>
-
+            <form method="GET" action="/loginMuser">
+                @csrf
+                @if ($errors->any())
+                    <p class="landing-login-error">{{$errors->first()}}</p>
+                @endif
                 <div class="landing-login-field">
                     <p>Username</p>
                     <input type="text" name="username" class="landing-login-input" placeholder="Enter your username">
@@ -39,7 +42,7 @@
 
             </form>
 
-            <a href="#signup">Or Sign up if you don't have an account.</a>
+            <a href="{{route('register')}}">Or Sign up if you don't have an account.</a>
 
         </div>
 

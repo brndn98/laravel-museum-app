@@ -6,7 +6,8 @@
 
     <div class="signup-wrapper">
 
-        <form>
+        <form method="POST" action="/musers" enctype="multipart/form-data">
+            @csrf
             <h1>Sign Up to MUSEUM :)</h1>
             <div class="form-field">
                 <input type="text" name="fullname" class="field-input" placeholder="Type in your full name">
@@ -37,11 +38,11 @@
                 <p>Description</p>
             </div>
             <div class="file-field">
-                <input type="file" name="file" id="avatar-input" class="file-input" accept="image/*">
+                <input type="file" name="avatar" id="avatar-input" class="file-input" accept="image/*">
                 <label for="avatar-input" class="file-label">choose a profile picture</label>
             </div>
             <div class="file-field">
-                <input type="file" name="file" id="portrait-input" class="file-input" accept="image/*">
+                <input type="file" name="portrait" id="portrait-input" class="file-input" accept="image/*">
                 <label for="portrait-input" class="file-label">choose a portrait picture</label>
             </div>
             <input type="submit" value="sign up" class="form-submit">

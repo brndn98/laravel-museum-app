@@ -11,38 +11,43 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+// HOME
+Route::get('/', 'FeedController@index');
 
-Route::get('foo', function () {
-    return "Hello World!";
-});
+// LOGIN
+Route::get('loginMuser', 'LoginMuser@authenticate');
+Route::get('logoutMuser', 'LogoutMuser@logout');
 
-/*Route::get('landing', function(){
-    return view('landing');
-});*/
+// CONTROLLER ROUTES
+//Route::resource('musers', 'MuserController');
 
-Route::get('signup', function(){
-    return view('signup');
-});
+// USERS ROLES
+Route::get('makeAdmin/{id}', 'AdminMuser@makeAdmin');
+Route::get('makeMod/{id}', 'AdminMuser@makeMod');
 
-Route::get('feed', function(){
-    return view('feed');
-});
+// USERS
+Route::resource('users', 'UserController', ['except' => ['index', 'create']]);
+// POSTS
+Route::resource('posts', 'PostController');
 
-Route::get('explore', function(){
-    return view('explore');
-});
+// FEED OPTIONS
+Route::get('recentPosts', 'explorePosts@recent');
+Route::get('followingPosts', 'explorePosts@following');
+Route::get('popularPosts', 'explorePosts@popular');
 
-Route::get('post', function(){
-    return view('post');
-});
+// SEARCH
+Route::get('explorePosts', 'explorePosts@search');
+Route::get('categories/{input}', 'explorePosts@categories');
 
-Route::get('share', function(){
-    return view('share');
-});
+// LIKE SYSTEM
+Route::post('ajaxRequest', 'ajaxRequestController@ajaxRequest');
+// COMMENT SYSTEM
+Route::resource('comments', 'CommentController');
+// FOLLOW SYSTEM
+Route::get('follow/{id}', 'followUsers@follow');
+Route::get('unfollow/{id}', 'followUsers@unfollow');
 
-Route::get('account', function(){
-    return view('account');
-});
+// AUTH
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

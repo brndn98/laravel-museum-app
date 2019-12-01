@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+
+use Symfony\Component\Console\Output\ConsoleOutput;
+
 
 class RegisterController extends Controller
 {
@@ -28,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -50,8 +55,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'email' => ['required', 'string', 'email', 'max:255',],
+            'password' => ['required', 'string', 'min:8',],
         ]);
     }
 
@@ -61,12 +66,34 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $data, Request $request)
     {
-        return User::create([
+        if($request->hasFile('avatar')){
+            $aFile = $request->file('avatar');
+            $aFilename = time().$aFile->getClientOriginalName();
+            $aFile->move(public_path().'/avatar/', $aFilename);
+        }
+        if($request->hasFile('portrait')){
+            $pFile = $request->file('portrait');
+            $pFilename = time().$pFile->getClientOriginalName();
+            $pFile->move(public_path().'/portrait/', $pFilename);
+        }
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'username' => $data['username'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'description' => $data['description'],
+            'avatar' => $aFilename,
+            'portrait' => $pFilename,
         ]);
+
+        $role = Role::select('id')->where('name', 'user')->first();
+        $user->roles()->attach($role);
+
+        return $user;
     }
 }

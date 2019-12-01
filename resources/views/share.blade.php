@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.museumApp')
 
 @section('title', 'New post')
 
@@ -6,7 +6,8 @@
 
     <div class="share-wrapper">
 
-        <form>
+        <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+            @csrf
             <h1>Add a new post to your gallery</h1>
             <div class="file-field">
                 <input type="file" name="file" id="file-input" class="file-input" accept="image/*">
@@ -17,20 +18,24 @@
                 <p>Title</p>
             </div>
             <div class="form-field">
-                <textarea name="description" id="form-description" class="form-description" placeholder="Write a description..."></textarea>
+                <textarea name="description" id="form-description" class="field-textarea" placeholder="Write a description..." maxlength="100"></textarea>
                 <p>Description</p>
             </div>
-            <!--<div class="form-field">
-                <fieldset>
-                    <div class="form-checkbox">
-                        <input type="checkbox" name="file-checkbox" class="checkbox-input" id="0" value="some tag">
-                        <i class="fas fa-check-square checkbox-checked"></i>
-                        <i class="far fa-square"></i>
-                        <label for="0">some tag</label>
-                    </div>
-                </fieldset>
+            <div class="form-field">
+                <!--<fieldset>-->
+                <div class="form-checkbox-fieldset">
+                    @foreach ($tags as $tag)
+                        <div class="form-checkbox">
+                        <input type="checkbox" name="tags[]" class="checkbox-input" id="{{$tag->id}}" value="{{$tag->id}}">
+                            <i class="fas fa-check-square checkbox-checked"></i>
+                            <i class="far fa-square"></i>
+                            <label for="{{$tag->id}}">{{$tag->name}}</label>
+                        </div>
+                    @endforeach
+                </div>
+                <!--</fieldset>-->
                 <p>Select tags</p>
-            </div>-->
+            </div>
             <input type="submit" value="share post" class="share-submit form-submit">
         </form>
 
