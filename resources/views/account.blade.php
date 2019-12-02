@@ -6,11 +6,11 @@
 
     <div class="account-wrapper">
 
-        <div class="account-profile" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})">
+        <div class="account-profile" style="background-image: url({{secure_asset('public/portrait/'.$user->portrait)}})">
 
             <span class="profile-portrait"></span>
 
-            <div class="profile-avatar" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
+            <div class="profile-avatar" style="background-image: url({{secure_asset('public/avatar/'.$user->avatar)}})"></div>
             <h1>{{$user->username}}</h1>
             @auth
                 @if (Auth::user()->id != $user->id)
@@ -92,7 +92,7 @@
 
                 @foreach ($user->posts->reverse() as $post)
                     <div class="grid-post">
-                        <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
+                        <div class="grid-post-img" style="background-image: url({{secure_asset('public/post/'.$post->file)}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
                         <div class="grid-post-info">
                             @auth
                                 @if (Auth::user()->likes->contains($post))

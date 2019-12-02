@@ -32,11 +32,11 @@
                 @foreach ($posts as $post)
                     <div class="feed-post">
                         <div class="feed-post-img" onclick="window.location='{{ route('posts.show', $post->id) }}'">
-                            <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
+                            <img src="{{secure_asset('public/post/'.$post->file)}}" alt="{{$post->title}}">
                         </div>
                         <div class="feed-post-info">
                             <div class="post-artist">
-                                <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                                <div style="background-image: url({{secure_asset('public/avatar/'.$post->user->avatar)}})"></div>
                                 <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                             </div>
                             <div class="post-actions">

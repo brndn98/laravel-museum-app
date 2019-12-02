@@ -11,7 +11,7 @@
             @csrf
 
             <h1>Edit your post</h1>
-            <div class="file-preview" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+            <div class="file-preview" style="background-image: url({{secure_asset('public/post/'.$post->file)}})"></div>
             <div class="file-field">
                 <input type="file" name="file" id="file-input" class="file-input" accept="image/*">
                 <label for="file-input" class="file-label">Change file</label>

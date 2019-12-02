@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('public/css/style.css')}}">
     <title>@yield('title')</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
 
     </div>
 
-    <script src="{{secure_asset('js/script.js')}}"></script>
+    <script src="{{secure_asset('public/js/script.js')}}"></script>
 
 </body>
 </html>
