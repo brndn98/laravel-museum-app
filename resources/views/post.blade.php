@@ -7,7 +7,7 @@
     <div class="post-wrapper">
 
         <div class="post-img">
-            <img src="{{secure_asset('public/post/'.$post->file)}}" alt="{{$post->title}}">
+            <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
             @auth
                 @if (Auth::user()->id == $post->user->id)
                     <a class="post-option" href="{{route('posts.edit', $post->id)}}">modify post</a>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="post-artist new-post-artist">
-                    <div style="background-image: url({{secure_asset('public/avatar/'.$post->user->avatar)}})"></div>
+                    <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
                     <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                 </div>
                 <div class="post-actions new-post-actions">
@@ -54,7 +54,7 @@
             @foreach ($post->commenters as $commenter)
                 <div class="post-comment">
                     <div class="comment-author">
-                        <div style="background-image: url({{secure_asset('public/avatar/'.$commenter->avatar)}})"></div>
+                        <div style="background-image: url({{secure_asset('avatar/'.$commenter->avatar)}})"></div>
                         <a href="{{route('users.show', $commenter->username)}}">{{$commenter->username}}</a>
                     </div>
                     <p class="comment-text">
@@ -70,7 +70,7 @@
                     <form method="POST" action="{{route('comments.store')}}" class="comment-form">
                         @csrf
                         <input name="post" type="hidden" value="{{$post->id}}">
-                        <div class="comment-avatar" style="background-image: url({{secure_asset('public/avatar/'.Auth::user()->avatar)}})"></div>
+                        <div class="comment-avatar" style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
                         <input type="text" name="text" id="comment-text" class="comment-input" placeholder="Write a comment..." autocomplete="off">
                         <input type="submit" value="send" class="comment-submit">
                     </form>
