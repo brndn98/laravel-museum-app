@@ -1171,9 +1171,9 @@ body {
 
 .share-wrapper {
     margin-top: 10vh;
-    margin-bottom: 2%;
+    margin-bottom: 5vh;
     width: 40%;
-    /*height: 85vh;*/
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
