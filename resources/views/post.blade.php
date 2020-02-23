@@ -7,7 +7,7 @@
     <div class="post-wrapper">
 
         <div class="post-img">
-            @if ($post->file != null)
+            @if (file_exists(public_path('post/'.$post->file)))
                 <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
             @else
                 <img src="{{secure_asset('images/post-placeholder.png')}}" alt="{{$post->title}}">

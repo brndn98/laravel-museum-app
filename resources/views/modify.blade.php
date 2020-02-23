@@ -11,7 +11,7 @@
             @csrf
 
             <h1>Edit your post</h1>
-            @if ($post->file != null)
+            @if (file_exists(public_path('post/'.$post->file)))
                 <div class="file-preview" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
             @else
                 <div class="file-preview" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>

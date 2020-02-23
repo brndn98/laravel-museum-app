@@ -16,7 +16,7 @@
             @forelse ($posts as $post)
 
                 <div class="grid-post" onclick="window.location='{{ route('posts.show', $post->id) }}'">
-                    @if ($post->file != null)
+                    @if (file_exists(public_path('post/'.$post->file)))
                         <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
                     @else
                         <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>

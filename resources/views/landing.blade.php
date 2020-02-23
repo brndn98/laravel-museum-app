@@ -7,7 +7,7 @@
     <div class="landing-wrapper">
 
         @isset($post)
-            @if ($post->file != null)
+            @if (file_exists(public_path('post/'.$post->file)))
                 <div class="featured" style="background-image: url({{secure_asset('post/'.$post->file)}})">
             @else
                 <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">

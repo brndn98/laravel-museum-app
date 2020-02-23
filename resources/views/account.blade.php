@@ -100,7 +100,7 @@
 
                 @foreach ($user->posts->reverse() as $post)
                     <div class="grid-post">
-                        @if ($post->file != null)
+                        @if (file_exists(public_path('post/'.$post->file)))
                             <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
                         @else
                             <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
