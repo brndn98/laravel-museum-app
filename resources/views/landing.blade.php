@@ -18,7 +18,7 @@
                 </div>
                 <!--Featured illustration-->
                 <div class="featured-artist">
-                    @if ($post->user->avatar != null)
+                    @if (file_exists(public_path('avatar/'.$post->user->avatar)))
                         <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
                     @else
                         <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
