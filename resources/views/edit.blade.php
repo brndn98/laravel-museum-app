@@ -43,7 +43,7 @@
                 @enderror
                 <p>Description <span class="form-field-rules">(up to 100 characters)</span></p>
             </div>
-            @if ($user->avatar != null)
+            @if (file_exists(public_path('avatar/'.$user->avatar)))
                 <div class="file-preview" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
             @else
                 <div class="file-preview" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
@@ -52,7 +52,7 @@
                 <input type="file" name="avatar" id="avatar-input" class="file-input" accept="image/*">
                 <label for="avatar-input" class="file-label">change profile avatar</label>
             </div>
-            @if ($user->portrait != null)
+            @if (file_exists(public_path('portrait/'.$user->portrait)))
                 <div class="file-preview" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})"></div>
             @else
                 <div class="file-preview" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>

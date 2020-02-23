@@ -6,7 +6,7 @@
 
     <div class="account-wrapper">
 
-        @if ($user->portrait != null)
+        @if (file_exists(public_path('portrait/'.$user->portrait)))
             <div class="account-profile" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})">
         @else
             <div class="account-profile" style="background-image: url({{secure_asset('images/post-placeholder.png')}})">
@@ -14,7 +14,7 @@
 
             <span class="profile-portrait"></span>
 
-            @if ($user->avatar != null)
+            @if (file_exists(public_path('avatar/'.$user->avatar)))
                 <div class="profile-avatar" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
             @else
                 <div class="profile-avatar" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
