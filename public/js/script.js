@@ -1,4 +1,4 @@
-var navbar = document.getElementById("navbar-id");
+const navbar = document.getElementById("navbar-id");
 //var navbarLogo = document.getElementById("navbar-logo-img");
 /*
 var navbarMenu = document.getElementById("navbar-menu-id");
@@ -10,11 +10,9 @@ function scrollNavbar() {
     if (window.scrollY > navbar.offsetTop) {
         navbar.classList.add("navbar-scroll");
         navbar.classList.remove("navbar-top");
-        //navbarLogo.setAttribute("src", "images/logo/logo_w_720x720.png");
     } else {
         navbar.classList.add("navbar-top");
         navbar.classList.remove("navbar-scroll");
-        //navbarLogo.setAttribute("src", "images/logo/logo_720x720.png");
     }
 }
 
@@ -59,34 +57,81 @@ menuLinks.forEach(element => {
 
 });
 */
-
-/*
-var fileInputs = document.querySelectorAll(".file-input");
-Array.prototype.forEach.call(fileInputs, function(input) {
-    var label = input.nextElementSibling;
-    var labelVal = label.innerHTML;
-
-    input.addEventListener("change", function(e) {
-        var fileName = "";
-        if (this.files && this.files.length > 1) {
-            fileName = (
-                this.getAttribute("data-multiple-caption") || ""
-            ).replace("{count}", this.files.length);
-        } else {
-            fileName = e.target.value.split("\\").pop();
-        }
-
-        if (fileName) label.innerHTML = fileName;
-        else label.innerHTML = labelVal;
-    });
-});
-*/
-var fileInputs = document.querySelectorAll(".file-input");
+const fileInputs = document.querySelectorAll(".file-input");
 fileInputs.forEach((fileInput, inputIndex) => {
-    var fileLabel = fileInput.nextElementSibling;
+    let fileLabel = fileInput.nextElementSibling;
 
     fileInput.addEventListener("change", function() {
-        var fileName = fileInput.value.split("\\").pop();
+        let fileName = fileInput.value.split("\\").pop();
         fileLabel.innerHTML = fileName;
     });
+});
+
+// AJAX REQUEST WITH FETCH API
+
+const likeIcons = document.querySelectorAll(".fa-heart");
+
+const toggleLikes = function() {
+    let token = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
+
+    let post_id = this.id;
+    let thisPost = this;
+    let thisPostId = "post-likes-count-" + this.id;
+    let thisLikes = document.getElementById(thisPostId);
+    let likesCount = thisLikes.innerText.replace(/\D+/g, "");
+
+    let url = "/ajaxRequest";
+
+    fetch(url, {
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json, text-plain, */*",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-TOKEN": token
+        },
+        method: "post",
+        credentials: "same-origin",
+        body: JSON.stringify({
+            post_id: post_id
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success === "liked") {
+                if (thisPost.classList.contains("grid-post-icons")) {
+                    thisPost.classList.replace(
+                        "grid-post-actions",
+                        "grid-post-actions-active"
+                    );
+                } else {
+                    thisPost.classList.replace(
+                        "post-likes",
+                        "post-likes-active"
+                    );
+                }
+                thisLikes.innerText = 1 + +likesCount + " likes";
+            } else if (data.success === "disliked") {
+                if (thisPost.classList.contains("grid-post-icons")) {
+                    thisPost.classList.replace(
+                        "grid-post-actions-active",
+                        "grid-post-actions"
+                    );
+                } else {
+                    thisPost.classList.replace(
+                        "post-likes-active",
+                        "post-likes"
+                    );
+                }
+                thisLikes.innerText = likesCount - 1 + " likes";
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
+
+likeIcons.forEach(icon => {
+    icon.addEventListener("click", toggleLikes);
 });

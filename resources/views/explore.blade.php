@@ -16,9 +16,17 @@
             @forelse ($posts as $post)
 
                 <div class="grid-post" onclick="window.location='{{ route('posts.show', $post->id) }}'">
-                    <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+                    @if ($post->file != null)
+                        <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+                    @else
+                        <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>
+                    @endif
                     <div class="grid-post-info">
-                        <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                        @if ($post->user->avatar != null)
+                            <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                        @else
+                            <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                        @endif
                         <a class="grid-post-account" href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                     </div>
                 </div>

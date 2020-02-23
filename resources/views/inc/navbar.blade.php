@@ -20,7 +20,11 @@
         @auth
             <a class="menu-link menu-account" href="{{route('users.show', Auth::user()->username)}}">
                 <p style="text-transform: uppercase">{{ Auth::user()->username }}</p>
-                <div style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
+                @if (Auth::user()->avatar != null)
+                    <div style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
+                @else
+                    <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                @endif
             </a>
         @else
             <a class="menu-link menu-account" href="{{url('/')}}">

@@ -43,12 +43,20 @@
                 @enderror
                 <p>Description <span class="form-field-rules">(up to 100 characters)</span></p>
             </div>
-            <div class="file-preview" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
+            @if ($user->avatar != null)
+                <div class="file-preview" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
+            @else
+                <div class="file-preview" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+            @endif
             <div class="file-field">
                 <input type="file" name="avatar" id="avatar-input" class="file-input" accept="image/*">
                 <label for="avatar-input" class="file-label">change profile avatar</label>
             </div>
-            <div class="file-preview" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})"></div>
+            @if ($user->portrait != null)
+                <div class="file-preview" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})"></div>
+            @else
+                <div class="file-preview" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>
+            @endif
             <div class="file-field">
                 <input type="file" name="portrait" id="portrait-input" class="file-input" accept="image/*">
                 <label for="portrait-input" class="file-label">change profile background</label>

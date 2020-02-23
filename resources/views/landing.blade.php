@@ -7,14 +7,22 @@
     <div class="landing-wrapper">
 
         @isset($post)
-            <div class="featured" style="background-image: url({{secure_asset('post/'.$post->file)}})">
+            @if ($post->file != null)
+                <div class="featured" style="background-image: url({{secure_asset('post/'.$post->file)}})">
+            @else
+                <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">
+            @endif
                 <div class="landing-header">
                     <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
                     <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
                 </div>
                 <!--Featured illustration-->
                 <div class="featured-artist">
-                    <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                    @if ($post->user->avatar != null)
+                        <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                    @else
+                        <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                    @endif
                     <p>{{$post->user->username}}</p>
                 </div>
             </div>

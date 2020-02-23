@@ -7,7 +7,11 @@
     <div class="post-wrapper">
 
         <div class="post-img">
-            <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
+            @if ($post->file != null)
+                <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
+            @else
+                <img src="{{secure_asset('images/post-placeholder.png')}}" alt="{{$post->title}}">
+            @endif
             @auth
                 @if (Auth::user()->id == $post->user->id)
                     <a class="post-option" href="{{route('posts.edit', $post->id)}}">modify post</a>
@@ -25,7 +29,11 @@
                     </div>
                 </div>
                 <div class="post-artist new-post-artist">
-                    <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                    @if ($post->user->avatar != null)
+                        <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                    @else
+                        <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                    @endif
                     <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                 </div>
                 <div class="post-actions new-post-actions">
@@ -54,7 +62,11 @@
             @foreach ($post->commenters as $commenter)
                 <div class="post-comment">
                     <div class="comment-author">
-                        <div style="background-image: url({{secure_asset('avatar/'.$commenter->avatar)}})"></div>
+                        @if ($commenter->avatar != null)
+                            <div style="background-image: url({{secure_asset('avatar/'.$commenter->avatar)}})"></div>
+                        @else
+                            <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                        @endif
                         <a href="{{route('users.show', $commenter->username)}}">{{$commenter->username}}</a>
                     </div>
                     <p class="comment-text">
@@ -70,7 +82,11 @@
                     <form method="POST" action="{{route('comments.store')}}" class="comment-form">
                         @csrf
                         <input name="post" type="hidden" value="{{$post->id}}">
-                        <div class="comment-avatar" style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
+                        @if (Auth::user()->avatar != null)
+                            <div class="comment-avatar" style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
+                        @else
+                            <div class="comment-avatar" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                        @endif
                         <input type="text" name="text" id="comment-text" class="comment-input" placeholder="Write a comment..." autocomplete="off">
                         <input type="submit" value="send" class="comment-submit">
                     </form>
@@ -80,41 +96,5 @@
         </div>
 
     </div>
-
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $(".fa-heart").click(function(e){
-            e.preventDefault();
-
-            var post_id = this.id;
-            var thisPost = this;
-            var thisPostId = 'post-likes-count-' + this.id;
-            var thisLikes = document.getElementById(thisPostId);
-            var likesCount = thisLikes.innerText.replace(/\D+/g, '');
-
-            $.ajax({
-                type:'POST',
-                url:'/ajaxRequest',
-                data:{post_id:post_id},
-
-                success:function(data){
-                    if(data.success === "liked"){
-                        thisPost.classList.add('post-likes-active');
-                        thisPost.classList.remove('post-likes');
-                        thisLikes.innerText = (1 + +likesCount) + ' likes';
-                    } else if(data.success === "disliked"){
-                        thisPost.classList.add('post-likes');
-                        thisPost.classList.remove('post-likes-active');
-                        thisLikes.innerText = (likesCount - 1) + ' likes';
-                    }
-                }
-            });
-        });
-    </script>
 
 @endsection

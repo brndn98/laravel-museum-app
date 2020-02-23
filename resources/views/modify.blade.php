@@ -11,7 +11,11 @@
             @csrf
 
             <h1>Edit your post</h1>
-            <div class="file-preview" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+            @if ($post->file != null)
+                <div class="file-preview" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+            @else
+                <div class="file-preview" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>
+            @endif
             <div class="file-field">
                 <input type="file" name="file" id="file-input" class="file-input" accept="image/*">
                 <label for="file-input" class="file-label">Change file</label>
