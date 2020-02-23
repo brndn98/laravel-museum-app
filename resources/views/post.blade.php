@@ -62,7 +62,7 @@
             @foreach ($post->commenters as $commenter)
                 <div class="post-comment">
                     <div class="comment-author">
-                        @if ($commenter->avatar != null)
+                        @if (file_exists(public_path('avatar/'.$commenter->avatar)))
                             <div style="background-image: url({{secure_asset('avatar/'.$commenter->avatar)}})"></div>
                         @else
                             <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
@@ -82,7 +82,7 @@
                     <form method="POST" action="{{route('comments.store')}}" class="comment-form">
                         @csrf
                         <input name="post" type="hidden" value="{{$post->id}}">
-                        @if (Auth::user()->avatar != null)
+                        @if (file_exists(public_path('avatar/'.Auth::user()->avatar)))
                             <div class="comment-avatar" style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
                         @else
                             <div class="comment-avatar" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
