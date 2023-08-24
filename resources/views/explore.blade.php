@@ -17,15 +17,15 @@
 
                 <div class="grid-post" onclick="window.location='{{ route('posts.show', $post->id) }}'">
                     @if (file_exists(public_path('post/'.$post->file)))
-                        <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+                        <div class="grid-post-img" style="background-image: url({{asset('post/'.$post->file)}})"></div>
                     @else
-                        <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>
+                        <div class="grid-post-img" style="background-image: url({{asset('images/post-placeholder.png')}})"></div>
                     @endif
                     <div class="grid-post-info">
                         @if (file_exists(public_path('avatar/'.$post->user->avatar)))
-                            <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                            <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                         @else
-                            <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                            <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                         @endif
                         <a class="grid-post-account" href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                     </div>

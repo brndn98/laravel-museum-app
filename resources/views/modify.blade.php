@@ -12,9 +12,9 @@
 
             <h1>Edit your post</h1>
             @if (file_exists(public_path('post/'.$post->file)))
-                <div class="file-preview" style="background-image: url({{secure_asset('post/'.$post->file)}})"></div>
+                <div class="file-preview" style="background-image: url({{asset('post/'.$post->file)}})"></div>
             @else
-                <div class="file-preview" style="background-image: url({{secure_asset('images/post-placeholder.png')}})"></div>
+                <div class="file-preview" style="background-image: url({{asset('images/post-placeholder.png')}})"></div>
             @endif
             <div class="file-field">
                 <input type="file" name="file" id="file-input" class="file-input" accept="image/*">

@@ -7,17 +7,17 @@
     <div class="account-wrapper">
 
         @if (file_exists(public_path('portrait/'.$user->portrait)))
-            <div class="account-profile" style="background-image: url({{secure_asset('portrait/'.$user->portrait)}})">
+            <div class="account-profile" style="background-image: url({{asset('portrait/'.$user->portrait)}})">
         @else
-            <div class="account-profile" style="background-image: url({{secure_asset('images/post-placeholder.png')}})">
+            <div class="account-profile" style="background-image: url({{asset('images/post-placeholder.png')}})">
         @endif
 
             <span class="profile-portrait"></span>
 
             @if (file_exists(public_path('avatar/'.$user->avatar)))
-                <div class="profile-avatar" style="background-image: url({{secure_asset('avatar/'.$user->avatar)}})"></div>
+                <div class="profile-avatar" style="background-image: url({{asset('avatar/'.$user->avatar)}})"></div>
             @else
-                <div class="profile-avatar" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                <div class="profile-avatar" style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
             @endif
             <h1>{{$user->username}}</h1>
             @auth
@@ -101,9 +101,9 @@
                 @foreach ($user->posts->reverse() as $post)
                     <div class="grid-post">
                         @if (file_exists(public_path('post/'.$post->file)))
-                            <div class="grid-post-img" style="background-image: url({{secure_asset('post/'.$post->file)}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
+                            <div class="grid-post-img" style="background-image: url({{asset('post/'.$post->file)}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
                         @else
-                            <div class="grid-post-img" style="background-image: url({{secure_asset('images/post-placeholder.png')}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
+                            <div class="grid-post-img" style="background-image: url({{asset('images/post-placeholder.png')}})" onclick="window.location='{{ route('posts.show', $post->id) }}'"></div>
                         @endif
                         <div class="grid-post-info">
                             @auth

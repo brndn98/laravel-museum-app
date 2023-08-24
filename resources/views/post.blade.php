@@ -8,9 +8,9 @@
 
         <div class="post-img">
             @if (file_exists(public_path('post/'.$post->file)))
-                <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
+                <img src="{{asset('post/'.$post->file)}}" alt="{{$post->title}}">
             @else
-                <img src="{{secure_asset('images/post-placeholder.png')}}" alt="{{$post->title}}">
+                <img src="{{asset('images/post-placeholder.png')}}" alt="{{$post->title}}">
             @endif
             @auth
                 @if (Auth::user()->id == $post->user->id)
@@ -30,9 +30,9 @@
                 </div>
                 <div class="post-artist new-post-artist">
                     @if (file_exists(public_path('avatar/'.$post->user->avatar)))
-                        <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                        <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                     @else
-                        <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                        <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                     @endif
                     <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                 </div>
@@ -63,9 +63,9 @@
                 <div class="post-comment">
                     <div class="comment-author">
                         @if (file_exists(public_path('avatar/'.$commenter->avatar)))
-                            <div style="background-image: url({{secure_asset('avatar/'.$commenter->avatar)}})"></div>
+                            <div style="background-image: url({{asset('avatar/'.$commenter->avatar)}})"></div>
                         @else
-                            <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                            <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                         @endif
                         <a href="{{route('users.show', $commenter->username)}}">{{$commenter->username}}</a>
                     </div>
@@ -83,9 +83,9 @@
                         @csrf
                         <input name="post" type="hidden" value="{{$post->id}}">
                         @if (file_exists(public_path('avatar/'.Auth::user()->avatar)))
-                            <div class="comment-avatar" style="background-image: url({{secure_asset('avatar/'.Auth::user()->avatar)}})"></div>
+                            <div class="comment-avatar" style="background-image: url({{asset('avatar/'.Auth::user()->avatar)}})"></div>
                         @else
-                            <div class="comment-avatar" style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                            <div class="comment-avatar" style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                         @endif
                         <input type="text" name="text" id="comment-text" class="comment-input" placeholder="Write a comment..." autocomplete="off">
                         <input type="submit" value="send" class="comment-submit">

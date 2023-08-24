@@ -33,17 +33,17 @@
                     <div class="feed-post">
                         <div class="feed-post-img" onclick="window.location='{{ route('posts.show', $post->id) }}'">
                             @if (file_exists(public_path('post/'.$post->file)))
-                                <img src="{{secure_asset('post/'.$post->file)}}" alt="{{$post->title}}">
+                                <img src="{{asset('post/'.$post->file)}}" alt="{{$post->title}}">
                             @else
-                                <img src="{{secure_asset('images/post-placeholder.png')}}" alt="{{$post->title}}">
+                                <img src="{{asset('images/post-placeholder.png')}}" alt="{{$post->title}}">
                             @endif
                         </div>
                         <div class="feed-post-info">
                             <div class="post-artist">
                                 @if (file_exists(public_path('avatar/'.$post->user->avatar)))
-                                    <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                                    <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                                 @else
-                                    <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                                    <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                                 @endif
                                 <a href="{{route('users.show', $post->user->username)}}">{{$post->user->username}}</a>
                             </div>

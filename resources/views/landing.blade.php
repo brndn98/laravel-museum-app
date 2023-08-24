@@ -8,9 +8,9 @@
 
         @isset($post)
             @if (file_exists(public_path('post/'.$post->file)))
-                <div class="featured" style="background-image: url({{secure_asset('post/'.$post->file)}})">
+                <div class="featured" style="background-image: url({{asset('post/'.$post->file)}})">
             @else
-                <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">
+                <div class="featured" style="background-image: url({{asset('images/featured_placeholder_3.png')}})">
             @endif
                 <div class="landing-header">
                     <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
@@ -19,22 +19,22 @@
                 <!--Featured illustration-->
                 <div class="featured-artist">
                     @if (file_exists(public_path('avatar/'.$post->user->avatar)))
-                        <div style="background-image: url({{secure_asset('avatar/'.$post->user->avatar)}})"></div>
+                        <div style="background-image: url({{asset('avatar/'.$post->user->avatar)}})"></div>
                     @else
-                        <div style="background-image: url({{secure_asset('images/user_placeholder.png')}})"></div>
+                        <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
                     @endif
                     <p>{{$post->user->username}}</p>
                 </div>
             </div>
         @else
-            <div class="featured" style="background-image: url({{secure_asset('images/featured_placeholder_3.png')}})">
+            <div class="featured" style="background-image: url({{asset('images/featured_placeholder_3.png')}})">
                 <div class="landing-header">
                     <h1>DESIGN, SHARE, EXPLORE & GET INSPIRED</h1>
                     <p>Welcome to MUSEUM, a community for illustrators and designers. Share, feedback and inspire each other.</p>
                 </div>
                 <div class="featured-artist">
-                    <img src="{{secure_asset('images/user_placeholder.png')}}" alt="featuredartist">
-                    <p>featuredartist</p>
+                    <div style="background-image: url({{asset('images/user_placeholder.png')}})"></div>
+                    <p>featured_artist</p>
                 </div>
             </div>
         @endisset
